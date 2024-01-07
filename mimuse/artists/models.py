@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 
 class Artist(models.Model):
+    id = models.CharField(primary_key=True)
     name = models.CharField(max_length=100, unique=True)
     overview = models.CharField()
     popularity = models.SmallIntegerField()
