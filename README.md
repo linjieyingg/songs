@@ -1,4 +1,4 @@
-**MIMUSE** (Mini Music Base)
+**MiMuse** (Mini Music Base)
 
 Members: Jieying Lin (Project Manager), Xinyi Ruan 
 
