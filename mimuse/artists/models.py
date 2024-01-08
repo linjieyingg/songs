@@ -8,6 +8,7 @@ class Artist(models.Model):
     overview = models.CharField()
     popularity = models.SmallIntegerField()
     followers = models.IntegerField()
+    image = models.URLField(null=True)
 
     class Meta:
         ordering = ['name']
