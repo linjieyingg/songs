@@ -18,6 +18,7 @@ class Song(models.Model):
     artists = models.ManyToManyField(Artist)
     release_date = models.DateField()
     popularity = models.SmallIntegerField()
+    favorite = models.BooleanField(default=False)
     preview_url = models.CharField(unique=True)
     
     class Meta:
