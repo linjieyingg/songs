@@ -4,7 +4,7 @@ from django.db import models
 from artists.models import Artist
 
 class Album(models.Model):
-    id = models.CharField(primary_key=True)
+    api_id = models.CharField()
     title = models.CharField(max_length=50)
     release_date = models.DateField()
     
@@ -12,7 +12,7 @@ class Album(models.Model):
         ordering = ['title']
     
 class Song(models.Model):
-    id = models.CharField(primary_key=True)
+    api_id = models.CharField()
     title = models.CharField(max_length=50)
     album_id = models.ForeignKey(Album, null=True, on_delete=models.SET_NULL)
     artists = models.ManyToManyField(Artist)
