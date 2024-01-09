@@ -11,20 +11,27 @@
 	{% endblock head %}
 </head>
 
-<body class="container">
-	<h1><center>MiMuse  </h1></center>
-    <div class="row gx-3">
-        <div class="col text-end">
-            <a href="http://localhost:8000/artists/">Artists</a>
+<body class="container-fluid">
+	<h1><center>MiMuse  </center></h1>
+    <center>
+        <div class="row">
+        
+            <div class="col-sm-4">
+                <a href="http://localhost:8000">Home</a>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://localhost:8000/artists/">Artists</a>
+            </div>
+            <div class="col-sm-4">
+                <a href="http://localhost:8000/songs/">Songs</a>
+            </div>
         </div>
-        <div class="col">
-            <a href="http://localhost:8000/songs/">Songs</a>
-        </div>
-    </div>
+
+    </center>
     {% if messages %}
     <ul class="messages">
         {% for message in messages %}
-        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        <li>{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
         {% endfor %}
     </ul>
     {% endif %}
