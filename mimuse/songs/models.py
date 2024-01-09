@@ -4,21 +4,23 @@ from django.db import models
 from artists.models import Artist
 
 class Album(models.Model):
-    api_id = models.CharField()
+    api_id = models.CharField(null=True)
     title = models.CharField(max_length=50)
     release_date = models.DateField()
+    cover_image = models.URLField(null=True)
     
     class Meta:
         ordering = ['title']
     
 class Song(models.Model):
-    api_id = models.CharField()
+    api_id = models.CharField(null=True)
     title = models.CharField(max_length=50)
     album_id = models.ForeignKey(Album, null=True, on_delete=models.SET_NULL)
     artists = models.ManyToManyField(Artist)
     release_date = models.DateField()
     popularity = models.SmallIntegerField()
-    preview_url = models.CharField(unique=True)
+    favorite = models.BooleanField(default=False)
+    preview_url = models.URLField(null=True)
     
     class Meta:
         ordering = ['title']

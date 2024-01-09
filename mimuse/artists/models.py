@@ -3,11 +3,12 @@ from django.db import models
 # Create your models here.
 
 class Artist(models.Model):
-    api_id = models.CharField()
+    api_id = models.CharField(null=True)
     name = models.CharField(max_length=100, unique=True)
     overview = models.CharField()
     popularity = models.SmallIntegerField()
     followers = models.IntegerField()
+    image = models.URLField(null=True)
 
     class Meta:
         ordering = ['name']
