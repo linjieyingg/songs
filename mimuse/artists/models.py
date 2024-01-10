@@ -1,4 +1,5 @@
 from django.db import models
+from songs.models import Song, Album
 
 # Create your models here.
 
@@ -9,6 +10,9 @@ class Artist(models.Model):
     popularity = models.SmallIntegerField()
     followers = models.IntegerField()
     image = models.URLField(null=True)
+    songs = models.ManyToManyField(Song)
+    albums = models.ManyToManyField(Album)
+
 
     class Meta:
         ordering = ['name']
