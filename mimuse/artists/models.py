@@ -4,8 +4,8 @@ from songs.models import Song, Album
 # Create your models here.
 
 class Artist(models.Model):
-    api_id = models.CharField(null=True)
-    name = models.CharField(max_length=100, unique=True)
+    api_id = models.CharField(null=True, unique=True)
+    name = models.CharField(max_length=100)
     overview = models.CharField()
     popularity = models.SmallIntegerField()
     followers = models.IntegerField()
