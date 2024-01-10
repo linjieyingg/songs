@@ -11,4 +11,4 @@ JieyingL -- 2024-01-08 17:36
   Added necessary fields to models, created urls, made basic html templates for core and artists
 
 JieyingL -- 2024-01-09 20:26
-  Updated, created temporary notebook to load artist records onto database
+  Updated models, created temporary notebook to load artist records onto database
