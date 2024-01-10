@@ -1,2 +1,4 @@
 
-mimuse/env_3.11.5/bin/activate
+env_3.11.5
+mimuse/mimuse/secrets.json
+requirements_env
