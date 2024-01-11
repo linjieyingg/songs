@@ -18,5 +18,6 @@ class ArtistDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         # Add in a QuerySet of all the books
         context["song_list"] = Song.objects.all()
+        context["albums"] = Album.objects.all()
         return context
 
