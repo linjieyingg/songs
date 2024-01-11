@@ -15,6 +15,12 @@ import json
 import http.client
 from artists.models import Artist
 import html
+import bs4 
+
+def remove_tags(message):
+    parsed = bs4.BeautifulSoup(message, "html.parser").text
+    print(parsed)
+    return bs4.BeautifulSoup(message, "html.parser").text
 
 def run():
     reference_id='2AfmfGFbe0A0WsTYm0SDTx'
@@ -74,6 +80,6 @@ def run():
             print(datas)
             update = Artist.objects.get(api_id=id)
             text = html.unescape(datas['data']['artist']['profile']['biography']['text'])
-            update.overview = text
+            update.overview = remove_tags(text)
             update.save()
             print(text)
