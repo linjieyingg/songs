@@ -8,6 +8,10 @@ from .models import Album, Song
 
 class SongListView(ListView):
     model = Song
+
+class SongDetailView(DetailView):
+    model = Song
+    
     
 class AlbumListView(ListView):
     model = Album
