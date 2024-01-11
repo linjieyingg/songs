@@ -11,4 +11,10 @@ JieyingL -- 2024-01-08 17:36
   Added necessary fields to models, created urls, made basic html templates for core and artists
 
 JieyingL -- 2024-01-09 20:45
-  Updated models, created temporary notebook to load artist records onto database, added artist image + # of followers to detail      page
+  Updated models, created temporary notebook to load artist records onto database, added artist image + # of followers to detail page
+
+ReyaM -- 2024-01-10 19:57
+  Added album list template and views, created notebook to test getting album info from api
+
+JieyingL -- 2024-01-10 19:38
+  Updated models, artist overviews added for artists in database with html parsed, implemented a script to get api data for artists
