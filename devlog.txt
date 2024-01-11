@@ -21,3 +21,6 @@ JieyingL -- 2024-01-10 19:38
 
 XinyiR -- 2024-01-11 6:28
   Updated models, finished notebook to add songs to database
+
+XinyiR -- 2024-01-11 14:50
+  Began updating database to connect songs and artist; adding to Songs detail page
