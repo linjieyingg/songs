@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<a href="{% url 'songs:song_list'%}" > Song List </a> <br/><br/>
+<h1>{{ object.title }}</h1>
+
+
+
+{% endblock content %}
