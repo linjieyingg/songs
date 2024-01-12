@@ -16,5 +16,5 @@ class SongDetailView(DetailView):
 class AlbumListView(ListView):
     model = Album
     
-# class ArtistDetailView(DetailView):
-#     model = Artist
+class AlbumDetailView(DetailView):
+    model = Album

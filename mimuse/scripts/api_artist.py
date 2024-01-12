@@ -41,6 +41,7 @@ def run():
         reference = Artist(api_id=data['id'], name=data['name'], followers=data['followers']['total'], popularity=data['popularity'], image=data['images'][0]['url'] )
         reference.save()
         print(reference)
+        
         conn = http.client.HTTPSConnection("spotify23.p.rapidapi.com")
         headers = {
             'X-RapidAPI-Key': "2173464f0bmsh087f6a414d24270p11a1f5jsn1ae2008c92ce",

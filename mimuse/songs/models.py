@@ -4,8 +4,8 @@ from django.db import models
 
 class Album(models.Model):
     api_id = models.CharField(null=True, unique=True)
-    title = models.CharField(max_length=50)
-    release_date = models.DateField()
+    title = models.CharField(max_length=50, null=True)
+    release_date = models.DateField(null=True)
     cover_image = models.URLField(null=True)
     
     class Meta:
