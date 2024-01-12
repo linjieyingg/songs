@@ -18,3 +18,6 @@ class AlbumListView(ListView):
     
 class AlbumDetailView(DetailView):
     model = Album
+
+class FavoritesListView(ListView):
+    model = Song
