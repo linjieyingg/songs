@@ -3,6 +3,8 @@
 {% block content %}
 Albums
     {% for album in object_list %}
-        {{ album.name }}<br/>
+        <a href="{% url 'songs:album_detail' album.id %}">
+            {{ album.title }}
+        </a><br/>
     {% endfor %}
 {% endblock content %}

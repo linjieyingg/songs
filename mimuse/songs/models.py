@@ -1,4 +1,5 @@
 from django.db import models
+
 # Create your models here.
 
 class Album(models.Model):
@@ -12,7 +13,7 @@ class Album(models.Model):
     
 class Song(models.Model):
     api_id = models.CharField(null=True, unique=True)
-    title = models.CharField(max_length=50)
+    title = models.CharField(max_length=100)
     album_id = models.ForeignKey(Album, null=True, on_delete=models.SET_NULL)
     release_date = models.DateField()
     popularity = models.SmallIntegerField()

@@ -1,9 +1,15 @@
 {% extends "base.html" %}
 
-{%block content%}
-Songs
+{% block content %}
+<h5>Songs</h5>
 
-{% endblock content%}
+{% for song in object_list %}
+    <a href="{% url 'songs:song_detail' song.id %}">
+        {{ song.title }}
+    </a><br/>
+    {% endfor %}
+
+{% endblock content %}
 
 
 
