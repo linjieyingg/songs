@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-Albums
+    <h5>Albums</h5>
     {% for album in object_list %}
         <a href="{% url 'songs:album_detail' album.id %}">
             {{ album.title }}
