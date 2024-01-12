@@ -8,5 +8,5 @@ urlpatterns = [
     path('', views.SongListView.as_view(), name="song_list"),
     path("<int:pk>", views.SongDetailView.as_view(), name="song_detail"),
     path('albums/', views.AlbumListView.as_view(), name="album_list"),
-    # path("<int:pk>", views.ArtistDetailView.as_view(), name="artist_detail")
+    path("<int:pk>", views.AlbumDetailView.as_view(), name="album_detail")
 ]
