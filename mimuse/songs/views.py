@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
 # from django.urls import reverse_lazy
-# from django.contrib import messages
+from django.contrib import messages
 from .models import Album, Song
 # Create your views here.
 
@@ -25,6 +25,7 @@ def ChangeFavorite(request):
     if (song.favorite == False): song.favorite = True
     else: song.favorie = False
     song.save()
+    messages.success(request, "Favorites updated.")
 
 class FavoritesListView(ListView):
     model = Song
