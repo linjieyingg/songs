@@ -2,8 +2,22 @@
 
 {% block content %}
 
-<a href="{% url 'songs:album_list'%}" > Album List </a> <br/><br/>
-<h1>{{ object.title }}</h1>
+<a href="{% url 'songs:album_list' %}" > Album List </a> <br/><br/>
+<div class="row">
+<img class="col-3"  src={{ object.cover_image }} 
+    alt="image"/> 
+    <span class="display-2 strong col-9">{{ object.title }}</span>
+</div>
+<div class='container'>
+    {% for song in songs %}
+        <div class="row">
+            <audio controls>
+                <source src={{song.preview_url}} type="audio/mp3">
+            </audio>
+            <a href="{% url 'songs:song_detail' song.id %}" > {{song.title}} <
+        </div>
+    {%endfor%}
+</div>
 
 
 {% endblock content %}

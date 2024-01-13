@@ -6,7 +6,7 @@ from songs.models import Song, Album
 class Artist(models.Model):
     api_id = models.CharField(null=True, unique=True)
     name = models.CharField(max_length=100)
-    overview = models.CharField(null=True)
+    overview = models.CharField(blank=True, default='')
     popularity = models.SmallIntegerField(null=True)
     followers = models.IntegerField(null=True)
     image = models.URLField(null=True)

@@ -24,3 +24,9 @@ XinyiR -- 2024-01-11 6:28
 
 XinyiR -- 2024-01-11 14:50
   Began updating database to connect songs and artist; adding to Songs detail page
+
+JieyingL -- 2024-01-11 22:05
+  Created details view for albums, updated albums api, add the artists from each song to database and relating the song to the artist
+
+ReyaM -- 2024-01-12 14:57
+  created favorites list view and notebook to gather all favorite songs in one array
