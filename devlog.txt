@@ -30,3 +30,6 @@ JieyingL -- 2024-01-11 22:05
 
 ReyaM -- 2024-01-12 14:57
   created favorites list view and notebook to gather all favorite songs in one array
+
+JieyingL -- 2024-01-12 22:46
+  Get tracks from albums, show tracks under the album in detail view, frontend updates
