@@ -20,6 +20,14 @@ class AlbumListView(ListView):
 class AlbumDetailView(DetailView):
     model = Album
     
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super().get_context_data(**kwargs)
+        # Add in a QuerySet of all the books
+        context['songs'] = Song.objects.filter(album_id=self.get_object())
+        # context["artists"] = Artist.objects.all()
+        return context
+
 def ChangeFavorite(request):
     id = request.GET['api_id']
     song = Song.objects.get(api_id=id)
@@ -28,13 +36,7 @@ def ChangeFavorite(request):
     song.save()
     messages.success(request, "Favorites updated.")
     
-def get_context_data(self, **kwargs):
-    # Call the base implementation first to get a context
-    context = super().get_context_data(**kwargs)
-    # Add in a QuerySet of all the books
-    context['songs'] = Song.objects.filter(album_id=self.get_object())
-    # context["artists"] = Artist.objects.all()
-    return context
+
 
 class AlbumSongDetailListView(ListView):
     template_name = 'albums_detail.html'
