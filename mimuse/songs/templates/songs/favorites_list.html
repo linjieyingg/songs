@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h5>Favorite Songs</h5>
+    {% for song in object_list %}
+        {% if song.favorite == True %}
+            <a href="{% url 'songs:song_detail' song.id %}">
+                {{ song.title }}
+            </a><br/>
+        {% endif %}
+    {% endfor %}
+{% endblock content %}

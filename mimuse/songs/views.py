@@ -18,6 +18,13 @@ class AlbumListView(ListView):
     
 class AlbumDetailView(DetailView):
     model = Album
+    
+def ChangeFavorite(request):
+    id = request.GET['api_id']
+    song = Song.objects.get(api_id=id)
+    if (song.favorite == False): song.favorite = True
+    else: song.favorie = False
+    song.save()
 
 class FavoritesListView(ListView):
     model = Song
