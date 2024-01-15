@@ -9,10 +9,18 @@
         <source src={{object.preview_url}} type="audio/mp3">
     </audio>
 
-     by <a href="{% url 'artists:artist_detail' artists.id %}"> {{artists.name}} </a>
+     by <a href="{% url 'artists:artist_detail' artists.id %}"> {{artists.name}} </a><br/>
+    
+    {% if object.favorite == False %}
+        <button type="button" class="btn btn-primary" id="favorite">Add to favorites</button>
+    {% else %}
+        <button type="button" class="btn btn-primary" id="favorite">Remove from favorites</button>
+    {% endif %}
 
     {% comment %} {% for artist in artists%}
        hi {{artist.name}}
     {%endfor%} {% endcomment %}
     
 {% endblock content %}
+
+<script src="{% static 'favorites.js' %}"></script>

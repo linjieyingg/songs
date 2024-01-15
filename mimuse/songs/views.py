@@ -43,14 +43,6 @@ class AlbumDetailView(DetailView):
         context['songs'] = Song.objects.filter(album_id=self.get_object())
         return context
 
-def ChangeFavorite(request):
-    id = request.GET['api_id']
-    song = Song.objects.get(api_id=id)
-    if (song.favorite == False): song.favorite = True
-    else: song.favorie = False
-    song.save()
-    messages.success(request, "Favorites updated.")
- 
 class FavoritesListView(ListView):
     model = Song
     

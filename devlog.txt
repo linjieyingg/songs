@@ -34,5 +34,11 @@ ReyaM -- 2024-01-12 14:57
 JieyingL -- 2024-01-12 22:46
   Get tracks from albums, show tracks under the album in detail view, frontend updates
 
-JieyingL -- 2024-01-12 22:46
+JieyingL -- 2024-01-14 20:34
   Compiled api requests into a single script file, added albums and songs to artist details, added artist to album and song details, added songs to album details, made everything show up 
+
+JieyingL -- 2024-01-14 22:13
+  Implemented search feature for artists
+
+ReyaM -- 2024-01-15 17:16
+  updated favorites
