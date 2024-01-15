@@ -8,16 +8,18 @@
     alt="image"/> 
     <h1>{{ object.name }}</h1> {{ object.followers }} Followers <br/>
     <br/> {{ object.overview}}
-        <div> <h3 class="my-3">Albums</h3>
-        {% for album in albums%}
-            <div class="row">
-            <img class="col-2" style="" src={{album.cover_image}} alt="image"/>
-            <span class="col my-auto display-6"><a href="{% url 'songs:album_detail' album.id %}" >{{album.title}}</a></span>
-            </div>
-       {% endfor%}
+        {% if exist %}
+            <div> <h3 class="my-3">Albums</h3>
+            {% for album in albums%}
+                <div class="row">
+                <img class="col-2" style="" src={{album.cover_image}} alt="image"/>
+                <span class="col my-auto display-6"><a href="{% url 'songs:album_detail' album.id %}" >{{album.title}}</a></span>
+                </div>
+        {% endfor%}
+       {%endif%}
         </div>
 
-        <h3>Songs</h3>
+        <h3  class="my-3">Songs</h3>
             {% for song in songs%}
             <div class="row my-3 gy-2">
                 <div class="col-5 mt-0">

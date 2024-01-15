@@ -19,5 +19,6 @@ class ArtistDetailView(DetailView):
         artist = Artist.objects.get(id=self.get_object().id)
         context['songs'] = artist.songs.all()
         context['albums'] = artist.albums.all()
+        context['exist'] = artist.albums.all().exists()
 
         return context
