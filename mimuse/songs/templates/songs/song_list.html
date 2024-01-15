@@ -7,6 +7,14 @@
     <div class="col strong"><a href="{% url 'songs:album_list'%}">Albums</a></div>
 </div>
 
+<div class="my-2">
+    <form action="{% url 'songs:song_search' %}" method = 'get'>
+
+        <input type="text" name="qs" placeholder="Search Album Name">
+    
+    </form>
+</div>
+
 {% for song in object_list %}
     <a href="{% url 'songs:song_detail' song.id %}">
         {{ song.title }}

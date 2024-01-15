@@ -5,13 +5,18 @@ from django.views.generic.detail import DetailView
 from django.contrib import messages
 from artists.models import Artist
 from .models import Album, Song
+from django.db.models import Q
 # Create your views here.
 
 class SongListView(ListView):
     model = Song
+    context_object_name = 'songs'
+    template_name = 'songs/song_list.html'
 
 class SongDetailView(DetailView):
     model = Song
+    context_object_name = 'song_details'
+    template_name = 'songs/song_detail.html'
     
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
@@ -22,16 +27,20 @@ class SongDetailView(DetailView):
     
 class AlbumListView(ListView):
     model = Album
+    context_object_name = 'albums'
+    template_name = 'songs/album_list.html'
     
 class AlbumDetailView(DetailView):
     model = Album
+    context_object_name = 'album_details'
+    template_name = 'songs/album_detail.html'
     
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
         context = super().get_context_data(**kwargs)
-        # Add in a QuerySet of all the books
+        artist = Artist.albums.through.objects.get(album_id=self.get_object().id)
+        context['artists'] = Artist.objects.get(id=artist.artist_id)
         context['songs'] = Song.objects.filter(album_id=self.get_object())
-        # context["artists"] = Artist.objects.all()
         return context
 
 def ChangeFavorite(request):
@@ -41,14 +50,26 @@ def ChangeFavorite(request):
     else: song.favorie = False
     song.save()
     messages.success(request, "Favorites updated.")
-    
-
-
-class AlbumSongDetailListView(ListView):
-    template_name = 'albums_detail.html'
-    context_object_name = 'songs_list'
-    def get_queryset(self):
-        return Song.objects.all()
-    
+ 
 class FavoritesListView(ListView):
     model = Song
+    
+class SearchAlbumsListView(ListView):
+    model = Album
+    context_object_name = 'album_list'
+    template_name = 'songs/album_search.html'
+
+    def get_queryset(self):
+        query = self.request.GET.get('qa')
+        return Album.objects.filter(
+            Q(title__icontains = query) | Q(title__icontains = query) )
+        
+class SearchSongsListView(ListView):
+    model = Song
+    context_object_name = 'song_list'
+    template_name = 'songs/song_search.html'
+
+    def get_queryset(self):
+        query = self.request.GET.get('qs')
+        return Album.objects.filter(
+            Q(title__icontains = query) | Q(title__icontains = query) )

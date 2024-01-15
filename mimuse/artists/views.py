@@ -5,7 +5,6 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView, ModelF
 from django.urls import reverse_lazy
 from .models import Artist
 from django.contrib import messages
-from .forms import ArtistForm
 from django.db.models import Q
 # Create your views here.
 
@@ -17,8 +16,8 @@ class ArtistListView(ListView):
     template_name = 'artists/artist_list.html'
 
 class ArtistDetailView(DetailView):
-    context_object_name = 'artist_details'
     model = Artist
+    context_object_name = 'artist_details'
     template_name = 'artists/artist_detail.html'
 
     def get_context_data(self, **kwargs):

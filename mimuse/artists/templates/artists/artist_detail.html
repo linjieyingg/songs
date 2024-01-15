@@ -11,7 +11,7 @@
         {% if exist %}
             <div> <h3 class="my-3">Albums</h3>
             {% for album in albums%}
-                <div class="row">
+                <div class="row my-2">
                 <img class="col-2" style="" src={{album.cover_image}} alt="image"/>
                 <span class="col my-auto display-6"><a href="{% url 'songs:album_detail' album.id %}" >{{album.title}}</a></span>
                 </div>
