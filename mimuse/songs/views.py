@@ -61,8 +61,15 @@ class SearchAlbumsListView(ListView):
 
     def get_queryset(self):
         query = self.request.GET.get('qa')
-        return Album.objects.filter(
+        response = Album.objects.filter(
             Q(title__icontains = query) | Q(title__icontains = query) )
+        if response.exists():
+            return response
+        else:
+            messages.add_message(
+            self.request, messages.SUCCESS,
+            'No such album found in the database')
+            return response
         
 class SearchSongsListView(ListView):
     model = Song
@@ -71,5 +78,12 @@ class SearchSongsListView(ListView):
 
     def get_queryset(self):
         query = self.request.GET.get('qs')
-        return Song.objects.filter(
+        response = Song.objects.filter(
             Q(title__icontains = query) | Q(title__icontains = query) )
+        if response.exists():
+            return response
+        else:
+            messages.add_message(
+            self.request, messages.SUCCESS,
+            'No such song found in the database')
+            return response

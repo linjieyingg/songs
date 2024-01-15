@@ -4,12 +4,10 @@
 
 
 {% for artist in artist_list %}
-<ul>
-    <li>
+    <div class="row m-3">
         <a href="{% url 'artists:artist_detail' artist.id %}"> {{artist.name}}</a>
+    </div>
 
-    </li>
-</ul>  
 
 {% endfor %}
 

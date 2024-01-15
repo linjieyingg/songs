@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView, ModelFormMixin
@@ -36,5 +36,12 @@ class SearchResultsListView(ListView):
 
     def get_queryset(self):
         query = self.request.GET.get('q')
-        return Artist.objects.filter(
+        response = Artist.objects.filter(
             Q(name__icontains = query) | Q(name__icontains = query) )
+        if response.exists():
+            return response
+        else:
+            messages.add_message(
+            self.request, messages.SUCCESS,
+            'No such artist found in the database')
+            return response
