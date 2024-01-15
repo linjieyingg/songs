@@ -2,7 +2,16 @@
 {% load static %}
 
 {% block content %}
-Artists <br/>
+<span class="display-6">Artists </span><br/>
+
+<div class="my-2">
+    <form action="{% url 'artists:search' %}" method = 'get'>
+
+        <input type="text" name="q" placeholder="Search Artist Name">
+    
+    </form>
+</div>
+
 {% for artist in object_list %}
         <a href="{% url 'artists:artist_detail' artist.id %}">
         {{ artist.name }}

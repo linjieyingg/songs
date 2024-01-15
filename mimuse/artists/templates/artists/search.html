@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+{% for artist in artist_list %}
+<ul>
+    <li>
+        <a href="{% url 'artists:artist_detail' artist.id %}"> {{artist.name}}</a>
+
+    </li>
+</ul>  
+
+{% endfor %}
+
+
+{% endblock content%}
