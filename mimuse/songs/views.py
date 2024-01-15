@@ -34,16 +34,6 @@ class AlbumDetailView(DetailView):
         # context["artists"] = Artist.objects.all()
         return context
 
-def ChangeFavorite(request):
-    id = request.GET['api_id']
-    song = Song.objects.get(api_id=id)
-    if (song.favorite == False): song.favorite = True
-    else: song.favorie = False
-    song.save()
-    messages.success(request, "Favorites updated.")
-    
-
-
 class AlbumSongDetailListView(ListView):
     template_name = 'albums_detail.html'
     context_object_name = 'songs_list'

@@ -1,7 +1,12 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
-    <h5>Favorite Songs</h5>
+    <div class="row">
+        <div class="col strong"><a href="{% url 'songs:song_list'%}">All Songs</a></div>
+        <div class="col strong"><a href="{% url 'songs:album_list'%}">Albums</a></div>
+    </div>
+    
     {% for song in object_list %}
         {% if song.favorite == True %}
             <a href="{% url 'songs:song_detail' song.id %}">

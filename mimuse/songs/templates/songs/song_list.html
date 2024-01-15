@@ -5,6 +5,7 @@
 <div class="row">
     <div class="col strong"><a href="{% url 'songs:song_list'%}">Songs</a></div>
     <div class="col strong"><a href="{% url 'songs:album_list'%}">Albums</a></div>
+    <div class="col strong"><a href="{% url 'songs:favorites_list' %}">Favorite Songs</a></div>
 </div>
 
 {% for song in object_list %}
