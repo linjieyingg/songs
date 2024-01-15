@@ -42,3 +42,6 @@ JieyingL -- 2024-01-14 22:13
 
 ReyaM -- 2024-01-15 17:16
   updated favorites
+
+JieyingL -- 2024-01-15 17:35
+  Implemented search feature for albums/songs, have message show up if there are no results from search
