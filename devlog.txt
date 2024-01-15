@@ -39,3 +39,6 @@ JieyingL -- 2024-01-14 20:34
 
 JieyingL -- 2024-01-14 22:13
   Implemented search feature for artists
+
+ReyaM -- 2024-01-15 17:16
+  updated favorites
