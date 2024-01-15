@@ -9,4 +9,10 @@ Summary:
 Launch Codes:
 
 create virtual env in root folder --> activate it
-run: pip install bs4
+run: 
+  pip install bs4
+
+  python manage.py runserver
+  ENTER IN YOUR API KEY
+  python manage.py runscript fill_database
+
