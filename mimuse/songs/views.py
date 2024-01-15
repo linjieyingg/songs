@@ -13,6 +13,12 @@ class SongListView(ListView):
 class SongDetailView(DetailView):
     model = Song
     
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super().get_context_data(**kwargs)
+        artist = Artist.songs.through.objects.get(song_id=self.get_object().id)
+        context['artists'] = Artist.objects.get(id=artist.artist_id)
+        return context
     
 class AlbumListView(ListView):
     model = Album

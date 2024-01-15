@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 
@@ -8,16 +9,16 @@
     alt="image"/> 
     <span class="display-2 strong col-9">{{ object.title }}</span>
 </div>
-<div class='container'>
+{% comment %} <div class=''> {% endcomment %}
     {% for song in songs %}
-        <div class="row">
-            <audio controls>
+        <div class="row my-2">
+            <audio class="col" controls>
                 <source src={{song.preview_url}} type="audio/mp3">
             </audio>
-            <a href="{% url 'songs:song_detail' song.id %}" > {{song.title}} <
+            <a class="col my-auto display-6" href="{% url 'songs:song_detail' song.id %}" > {{song.title}} 
         </div>
     {%endfor%}
-</div>
+{% comment %} </div> {% endcomment %}
 
 
 {% endblock content %}

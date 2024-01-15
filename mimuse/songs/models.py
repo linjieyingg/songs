@@ -18,10 +18,11 @@ class Song(models.Model):
     api_id = models.CharField(null=True, unique=True)
     title = models.CharField()
     album_id = models.ForeignKey(Album, null=True, on_delete=models.SET_NULL)
-    release_date = models.DateField()
+    release_date = models.DateField(null=True)
     popularity = models.SmallIntegerField()
     favorite = models.BooleanField(default=False)
     preview_url = models.URLField(null=True)
+    recommended = models.BooleanField(default=False)
     
     class Meta:
         ordering = ['title']

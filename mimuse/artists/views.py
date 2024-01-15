@@ -16,8 +16,8 @@ class ArtistDetailView(DetailView):
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
         context = super().get_context_data(**kwargs)
-        # Add in a QuerySet of all the books
-        context["song_list"] = Song.objects.all()
-        context["albums"] = Album.objects.all()
-        return context
+        artist = Artist.objects.get(id=self.get_object().id)
+        context['songs'] = artist.songs.all()
+        context['albums'] = artist.albums.all()
 
+        return context
