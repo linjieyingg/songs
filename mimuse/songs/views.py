@@ -71,5 +71,5 @@ class SearchSongsListView(ListView):
 
     def get_queryset(self):
         query = self.request.GET.get('qs')
-        return Album.objects.filter(
+        return Song.objects.filter(
             Q(title__icontains = query) | Q(title__icontains = query) )

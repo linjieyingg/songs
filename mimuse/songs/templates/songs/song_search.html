@@ -5,7 +5,7 @@
 
 {% for song in song_list %}
     <div class="row">
-        <a href="{% url 'songs:song_detail' song.id %}"> {{album.title}}</a>
+        <a href="{% url 'songs:song_detail' song.id %}"> {{song.title}}</a>
     </div>
 
 {% endfor %}
