@@ -45,6 +45,15 @@ class AlbumDetailView(DetailView):
 
 class FavoritesListView(ListView):
     model = Song
+    def get_queryset(self):
+        response = Song.objects.filter(favorite=True)
+        if response.exists():
+            return response
+        else:
+            messages.add_message(
+            self.request, messages.SUCCESS,
+            'No songs in favorites')
+            return response
     
 class SearchAlbumsListView(ListView):
     model = Album
