@@ -54,6 +54,16 @@ class FavoritesListView(ListView):
             self.request, messages.SUCCESS,
             'No songs in favorites')
             return response
+
+def change_favorite(request, **kwargs):
+    song = Song.objects.get(id=kwargs['pk'])
+    if (song.favorite == False):
+        song.favorite = True
+    else:
+        song.favorite = False
+    song.save()
+    messages.add_message(request, messages.SUCCESS, 'Favorites updated.')
+    return render(request, 'songs/song_detail.html')
     
 class SearchAlbumsListView(ListView):
     model = Album

@@ -2,12 +2,14 @@
 {% load static %}
 
 {% block content %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/static/js/favorites.js"></script>
 <div class="row">
     <div class="col">
-        <a href="{% url 'songs:song_list'%}" > Song List </a>
+        <a href="{% url 'songs:song_list'%}"> Song List </a>
     </div>
     <div class="col">
-        <a href="{% url 'songs:favorites_list'%}" > Favorites List </a> 
+        <a href="{% url 'songs:favorites_list'%}"> Favorites List </a> 
     </div>
 </div>
 
@@ -17,12 +19,12 @@
         <source src={{object.preview_url}} type="audio/mp3">
     </audio>
 
-     by <a href="{% url 'artists:artist_detail' artists.id %}"> {{artists.name}} </a><br/>
+     by <a href="{% url 'artists:artist_detail' artists.id %}">{{artists.name}} </a><br/>
     
     {% if object.favorite == False %}
-        <button type="button" class="btn btn-primary" id="{{object.api_id}}" onclick="change_favorite()">Add to favorites</button>
+        <button type="button" class="btn btn-primary" id="{{object.id}}">Add to favorites</button>
     {% else %}
-        <button type="button" class="btn btn-primary" id="{{object.api_id}}" onclick="change_favorite()" >Remove from favorites</button>
+        <button type="button" class="btn btn-primary" id="{{object.id}}">Remove from favorites</button>
     {% endif %}
 
     {% comment %} {% for artist in artists%}
@@ -32,15 +34,9 @@
 {% endblock content %}
 
 
-{% block js %}
-    <script>
-        function change_favorite() {
-            var id = $(".btn btn-primary").id;
-            var song = Song.objects.get(api_id=id);
-            if (song.favorite == False) song.favorite = True;
-            else song.favorite = False;
-            song.save();
-            alert("Favorites edited.");
-        };
-    </script>
-{% endblock js %}
+{% comment %} {% block js %}
+    $(".btn btn-primary").addEventListener('click', function change_favorite() {
+        var id = $(this).attr("id");
+        $.get('favorites/update/<int:id>');
+    });
+{% endblock js %} {% endcomment %}
