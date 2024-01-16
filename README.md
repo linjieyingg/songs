@@ -9,6 +9,10 @@ Our code gets 5 recommended songs based on your favorite song, or based on our f
 
 Launch Codes:
 - create requirements_env folder
+  - in the dev.in folder add:
+nodeenv
+pgadmin4
+django-extensions
 - create virtual env in root folder --> activate virtual env
 - in the project directory, go to mimuse/secrets_template.json -> copy the code and create file secrets.json and paste the code there and enter in your database information.
 - run: 
