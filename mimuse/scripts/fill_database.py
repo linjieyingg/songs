@@ -27,15 +27,16 @@ def run():
    
     api_key = 'aca7b771e2msh9c54abb3273edbdp178a4ajsnc1d498e77546'
     api_key2 = 'decc1ccd1emshec26a27a5b4d655p1dd505jsn708530cee011'
+    seed_track = '38MKW2tQHtyO8djIOKlEFF'
+    
     conn = http.client.HTTPSConnection("spotify23.p.rapidapi.com")
-
     headers = {
         'X-RapidAPI-Key': api_key,
         'X-RapidAPI-Host': "spotify23.p.rapidapi.com"
     }
     
     #  get track recommendations
-    conn.request("GET", "/recommendations/?limit=5&seed_tracks=38MKW2tQHtyO8djIOKlEFF", headers=headers)
+    conn.request("GET", "/recommendations/?limit=5&seed_tracks={seed_track}".format(seed_track=seed_track), headers=headers)
     res = conn.getresponse()
     data = json.loads(res.read().decode("utf-8"))
     song_list = list()
