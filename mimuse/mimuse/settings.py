@@ -16,6 +16,7 @@ from pathlib import Path
 from django.core.exceptions import ImproperlyConfigured
 import mimetypes
 
+mimetypes.add_type("text/javascript", ".js", True)
 mimetypes.add_type("text/css", ".css", True)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
