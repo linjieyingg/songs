@@ -2,7 +2,15 @@
 {% load static %}
 
 {% block content %}
-    <a href="{% url 'songs:song_list'%}" > Song List </a> <br/><br/>
+<div class="row">
+    <div class="col">
+        <a href="{% url 'songs:song_list'%}" > Song List </a>
+    </div>
+    <div class="col">
+        <a href="{% url 'songs:favorites_list'%}" > Favorites List </a> 
+    </div>
+</div>
+
     <span class="display-1 strong">{{ object.title }}</span> 
     {{object.release_date}} <br/>
     <audio controls>
@@ -14,7 +22,7 @@
     {% if object.favorite == False %}
         <button type="button" class="btn btn-primary" id="{{object.api_id}}" onclick="change_favorite()">Add to favorites</button>
     {% else %}
-        <button type="button" class="btn btn-primary" id="{{object.api_id}}" onclick="change_favorite()">Remove from favorites</button>
+        <button type="button" class="btn btn-primary" id="{{object.api_id}}" onclick="change_favorite()" >Remove from favorites</button>
     {% endif %}
 
     {% comment %} {% for artist in artists%}
@@ -23,8 +31,9 @@
     
 {% endblock content %}
 
-<script>
-    {% block js %}
+
+{% block js %}
+    <script>
         function change_favorite() {
             var id = $(".btn btn-primary").id;
             var song = Song.objects.get(api_id=id);
@@ -33,5 +42,5 @@
             song.save();
             alert("Favorites edited.");
         };
-    {% endblock js %}
-</script>
+    </script>
+{% endblock js %}
