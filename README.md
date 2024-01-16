@@ -13,8 +13,8 @@ Launch Codes:
 - in the project directory, go to mimuse/secrets_template.json -> copy the code and create file secrets.json and paste the code there and enter in your database information.
 - run: 
   - pip install bs4
-  - python manage.py runserver
 - Navigate to scripts/fill_database.py
 - Inside the run function enter in your api keys in api_key and api_key2, and if you want you can replace seed_track with the track id of your favorite song -> can find the id in the search endpoint here https://rapidapi.com/Glavier/api/spotify23 
-- run: python manage.py runscript fill_database
-
+- run:
+  - python manage.py runscript fill_database
+  - python manage.py runserver
