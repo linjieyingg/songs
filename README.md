@@ -9,7 +9,7 @@ Our code gets 5 recommended songs based on your favorite song, or based on our f
 
 Launch Codes:
 - create requirements_env folder
-  - in the dev.in folder add:
+  - in the dev.in file add:
 nodeenv
 pgadmin4
 django-extensions
