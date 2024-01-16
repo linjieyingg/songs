@@ -5,6 +5,5 @@ from . import views
 app_name = "core"
 
 urlpatterns = [
-   path("", views.main, name="main"),
-
+   path("", views.SongListView.as_view(), name="main"),
 ]
