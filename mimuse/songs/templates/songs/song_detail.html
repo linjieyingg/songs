@@ -21,11 +21,11 @@
 
      by <a href="{% url 'artists:artist_detail' artists.id %}">{{artists.name}} </a><br/>
     
-    {% if object.favorite == False %}
+    {% comment %} {% if object.favorite == False %}
         <button type="button" class="btn btn-primary"  data-pk={{object.id}} id="{{object.id}}">Add to favorites</button>
     {% else %}
         <button type="button" class="btn btn-primary" data-pk={{object.id}} id="{{object.id}}">Remove from favorites</button>
-    {% endif %}
+    {% endif %} {% endcomment %}
 
     <div style="margin-top: 2%;">
         <form action="{% url 'songs:update_favorites' object.id %}" method="POST">
