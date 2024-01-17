@@ -27,13 +27,15 @@
         <button type="button" class="btn btn-primary" data-pk={{object.id}} id="{{object.id}}">Remove from favorites</button>
     {% endif %} {% endcomment %}
 
-    <div style="margin-top: 2%;">
+    <div class="hovering" style="margin-top: 2%;">
         <form action="{% url 'songs:update_favorites' object.id %}" method="POST">
             {% csrf_token %}
             {% if object.favorite == False %}
-            <button type="submit" onclick="changeFavorite()" class="favorite btn btn-primary">Favorite</button>
+            <button type="submit" onclick="changeFavorite()" class="favorite"><i class="bi bi-heart"></i></button>
+            <div class="fav">Favorite </div>
             {% else%}
-            <button type="submit" onclick="changeFavorite()" class="favorite btn btn-primary">Unfavorite</button>
+            <button type="submit" onclick="changeFavorite()" class="favorite"><i class="bi bi-heart-fill"></i></button>
+            <div class="fav">Unfavorite </div>
             {%endif%}
         </form>
         
