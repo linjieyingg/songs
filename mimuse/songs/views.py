@@ -12,6 +12,7 @@ class SongListView(ListView):
     model = Song
     context_object_name = 'songs'
     template_name = 'songs/song_list.html'
+    paginate_by = 10
 
 class SongDetailView(DetailView):
     model = Song
@@ -29,6 +30,7 @@ class AlbumListView(ListView):
     model = Album
     context_object_name = 'albums'
     template_name = 'songs/album_list.html'
+    paginate_by = 10
     
 class AlbumDetailView(DetailView):
     model = Album
@@ -45,6 +47,7 @@ class AlbumDetailView(DetailView):
 
 class FavoritesListView(ListView):
     model = Song
+    template_name = 'songs/favorites_list.html'
     def get_queryset(self):
         response = Song.objects.filter(favorite=True)
         if response.exists():
@@ -55,8 +58,10 @@ class FavoritesListView(ListView):
             'No songs in favorites')
             return response
 
-def change_favorite(request, **kwargs):
-    song = Song.objects.get(id=kwargs['pk'])
+def change_favorite(request):
+    if request.method == 'GET':
+        pk = request.GET['pk'] 
+    song = Song.objects.get(id=pk)
     if (song.favorite == False):
         song.favorite = True
     else:
