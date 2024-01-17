@@ -30,17 +30,18 @@
         </div>
     </center>
     <div class="run_api">
+    </div>
     
-    <div class="m-3">
+   
+	{% block content %}
+    {% endblock content %}
     {% if messages %}
     <div class="messages">
         {% for message in messages %}
         {% if message.tags %}{% endif %}{{ message }}
         {% endfor %}
-    </div>
+    </div> 
     {% endif %}
-	{% block content %}
-    {% endblock content %}
 </br>
 </br>
 </body>

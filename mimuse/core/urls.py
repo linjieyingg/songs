@@ -5,5 +5,5 @@ from . import views
 app_name = "core"
 
 urlpatterns = [
-   path("", views.SongListView.as_view(), name="main"),
+   path("", views.RecommendedListView.as_view(template_name='core/home.html'), name="main"),
 ]
