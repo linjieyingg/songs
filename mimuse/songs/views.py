@@ -58,18 +58,17 @@ class FavoritesListView(ListView):
             'No songs in favorites')
             return response
 
-def change_favorite(request):
-    if request.method == 'GET':
-        pk = request.GET['pk'] 
-    song = Song.objects.get(id=pk)
-    if (song.favorite == False):
-        song.favorite = True
-    else:
-        song.favorite = False
-    song.save()
-    messages.add_message(request, messages.SUCCESS, 'Favorites updated.')
-    return render(request, 'songs/song_detail.html')
-    
+def change_favorite(request, pk):
+    if request.method == 'POST':
+        song = Song.objects.get(id=pk)
+        if (song.favorite == False):
+            song.favorite = True
+        else:
+            song.favorite = False
+        song.save()
+        messages.add_message(request, messages.SUCCESS, 'Favorites updated.')
+    return render(request, 'songs/change_favorite.html')
+        
 class SearchAlbumsListView(ListView):
     model = Album
     context_object_name = 'album_list'
