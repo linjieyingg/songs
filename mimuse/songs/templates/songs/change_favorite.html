@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="row my-2">
+        <div class="col strong"><a href="{% url 'songs:song_list'%}">All Songs</a></div>
+        <div class="col strong"><a href="{% url 'songs:album_list'%}">Albums</a></div>
+    </div>
+    
+{% endblock content %}

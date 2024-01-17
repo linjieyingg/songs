@@ -22,21 +22,27 @@
      by <a href="{% url 'artists:artist_detail' artists.id %}">{{artists.name}} </a><br/>
     
     {% if object.favorite == False %}
-        <button type="button" class="btn btn-primary"  data-pk="{{object.id}}" id="{{object.id}}">Add to favorites</button>
+        <button type="button" class="btn btn-primary"  data-pk={{object.id}} id="{{object.id}}">Add to favorites</button>
     {% else %}
-        <button type="button" class="btn btn-primary" id="{{object.id}}">Remove from favorites</button>
+        <button type="button" class="btn btn-primary" data-pk={{object.id}} id="{{object.id}}">Remove from favorites</button>
     {% endif %}
 
-    {% comment %} {% for artist in artists%}
-       hi {{artist.name}}
-    {%endfor%} {% endcomment %}
+    <div style="margin-top: 2%;">
+        <form action="{% url 'songs:update_favorites' object.id %}" method="POST">
+            {% csrf_token %}
+            {% if object.favorite == False %}
+            <button type="submit" onclick="changeFavorite()" class="favorite btn btn-primary">Favorite</button>
+            {% else%}
+            <button type="submit" onclick="changeFavorite()" class="favorite btn btn-primary">Unfavorite</button>
+            {%endif%}
+        </form>
+        
+    </div>
     
 {% endblock content %}
 
 
-{% comment %} {% block js %}
-    $(".btn btn-primary").addEventListener('click', function change_favorite() {
-        var id = $(this).attr("id");
-        $.get('favorites/update/<int:id>');
-    });
-{% endblock js %} {% endcomment %}
+{% block js %}
+
+{% endblock js %} 
+
