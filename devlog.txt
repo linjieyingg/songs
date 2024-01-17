@@ -46,5 +46,5 @@ ReyaM -- 2024-01-15 17:16
 JieyingL -- 2024-01-15 17:35
   Implemented search feature for albums/songs, have message show up if there are no results from search
 
-JieyingL -- 2024-01-16 19:09
-  Added recommended songs to home page
+JieyingL -- 2024-01-16 19:53
+  Added recommended songs to home page, got favorite feature to work
