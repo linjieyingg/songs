@@ -91,3 +91,7 @@ li a:hover {
   line-height: 75px;
   font-size: 30px;
 } */
+
+.bi-heart-fill {
+  color:red;
+}
