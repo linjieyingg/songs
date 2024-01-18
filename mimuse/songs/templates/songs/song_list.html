@@ -2,44 +2,56 @@
 {% load static %}
 
 {% block content %}
-<div class="row">
-    <div class="col strong"><a href="{% url 'songs:song_list'%}">Songs</a></div>
-    <div class="col strong"><a href="{% url 'songs:album_list'%}">Albums</a></div>
-    <div class="col strong"><a href="{% url 'songs:favorites_list' %}">Favorite Songs</a></div>
-</div>
+<head>
+    <link rel="stylesheet" href="{% static 'css/songs.css' %}">
+</head>
 
-<div class="my-2">
-    <form action="{% url 'songs:song_search' %}" method = 'get'>
-        <div class="inner-addon left-addon">
-            <i class="bi bi-search" ></i> 
-            <input type="text" name="qs" placeholder="Search Song Name">
-          </div>
-    </form>
-</div>
-
-{% for song in object_list %}
-    <a href="{% url 'songs:song_detail' song.id %}">
-        {{ song.title }}
-    </a><br/>
-    {% endfor %}
-
-    <div class="pagination">
-        <span class="step-links">
-            {% if page_obj.has_previous %}
-                <a href="?page=1">&laquo; first</a>
-                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
-            {% endif %}
+<body>
+    <!-- <div class="row songnav">
+        <div class="wrapper pull-right">
+            <div class="dropdown-content pull-right">
+                <p class="col strong"><a href="{% url 'songs:song_list'%}">Songs</a></p>
+                <p class="col strong"><a href="{% url 'songs:album_list'%}">Albums</a></p>
+                <p class="col strong"><a href="{% url 'songs:favorites_list' %}">Favorite Songs</a></p>
+            </div>
+        </div>
+    </div> -->
     
-            <span class="current">
-                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
-            </span>
-    
-            {% if page_obj.has_next %}
-                <a href="?page={{ page_obj.next_page_number }}">next</a>
-                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
-            {% endif %}
-        </span>
+    <div class="my-2">
+        <form action="{% url 'songs:song_search' %}" method = 'get'>
+            <div class="inner-addon left-addon">
+                <i class="bi bi-search" ></i> 
+                <input type="text" name="qs" placeholder="Search Song Name">
+              </div>
+        </form>
     </div>
+    
+    {% for song in object_list %}
+        <a href="{% url 'songs:song_detail' song.id %}">
+            {{ song.title }}
+        </a><br/>
+        {% endfor %}
+    
+        <div class="pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page=1">&laquo; first</a>
+                    <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                {% endif %}
+        
+                <span class="current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+        
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">next</a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+
+</body>
+
 
 {% endblock content %}
 

@@ -27,13 +27,36 @@
             <li class="col-sm-4">
                 <a href="http://localhost:8000/artists/">Artists</a>
             </li>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Dropdown button
+                </button>
+                <!-- <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div> -->
+              </div>
             <li class="col-sm-4 songnav">
-                <a href="http://localhost:8000/songs/">Songs</a>
+                <div class="dropdown-content pull-right">
+                <a href="http://localhost:8000/songs/" class="dropdown pull-right">Songs</a>
+                <div class="row">
+                    <div class="dropdown-menu">
+                        
+                            <!-- <div class="dropdown-toggle"> -->
+                            <p class="dropdown-item strong songnav"><a href="{% url 'songs:song_list'%}">Songs</a></p>
+                            <p class="dropdown-item strong songnav"><a href="{% url 'songs:album_list'%}">Albums</a></p>
+                            <p class="dropdown-item strong songnav"><a href="{% url 'songs:favorites_list' %}">Favorite Songs</a></p>
+                            <!-- </div> -->
+                        </div></div>
+                    </div>
+                </div>
             </li>
         </div>
     <div class="run_api">
     </div>
     
+   
    
 	{% block content %}
     {% endblock content %}
