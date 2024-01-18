@@ -1,22 +1,46 @@
-div {
-    background-color: red;
+#hovering{
+  display: inline;
+  cursor: none;
+  vertical-align: text-top;
+  }
+
+.fav {
+  position: absolute;
+  font-style: italic;
+  font-size: 24px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  display: none;
+  bottom: 0;
+}
+.favorite:hover {
+  color:#f90000;
+}
+  
+.favorited {
+  color:#f90000
+}
+  
+button {
+  all: unset;
+  cursor: pointer;
 }
 
-.hovering:hover > #hoveringText {
-    display : block;
-  }
+form {
+  display: inline;
+}
+
+.inner-addon {
+  position: relative;
+}
   
-  .fav {
-    position: absolute;
-    font-style: italic;
-    font-size: 24px;
-    font-weight: bold;
-    color: rgb(0, 0, 0);
-    display: none;
-  }
+.inner-addon .bi {
+  position: absolute;
+  pointer-events: none;
+  padding-left:  8px;
+}
   
-  /* .hovering{
-    width: 300px;
-    height: 300px;
-    cursor: none;
-  } */
+.left-addon .bi  { 
+  left:  0px;
+}
+.left-addon input  { padding-left:  30px; }
