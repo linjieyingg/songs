@@ -44,3 +44,50 @@ form {
   left:  0px;
 }
 .left-addon input  { padding-left:  30px; }
+
+li a{
+  display: block;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+.nav{
+  background-color: blue;
+  text-align: center;
+  
+}
+
+/* div{
+  display: block;
+  background-color: red;
+} */
+
+.flex-container {
+  display: flex-box;
+  height: 200px;
+  align-items: center;
+  padding: 12px 14px;
+  border: 10px;
+  border-color: white;
+  /* background-color: rgb(212, 248, 212);
+  justify-content: space-around; */
+
+}
+
+.test{
+  display: inline-block;
+}
+
+/* .flex-container div {
+  background-color: #f1f1f1;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+} */
