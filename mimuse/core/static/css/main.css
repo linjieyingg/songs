@@ -1,3 +1,28 @@
-div {
-    background-color: red;
+.main {
+        background-color: #fdfdfd;
+        
+}
+
+.nav {
+    background-color: #ffffff;
+}
+
+li a {
+    display: block;
+    color:rgb(255, 255, 255);
+    text-align: center;
+    padding: 14px 16px;
+}
+li a:hover {
+    background-color: #5d65ae;
+      }
+.title {
+    color: #5d65ae;
+    background-color: #93aae9;
+    margin:0;
+    display: block;
+}
+
+.test{
+    color: aqua;
 }
