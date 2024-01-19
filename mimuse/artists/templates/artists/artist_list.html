@@ -13,9 +13,15 @@
     </form>
 </div>
 
-{% for artist in object_list %}
+<div class="flex-container">
+    <div class="test">
+        {% for artist in object_list %}
         <a href="{% url 'artists:artist_detail' artist.id %}">
         {{ artist.name }}
         </a><br/>
-    {% endfor %}
+        {% endfor %}
+    </div>
+   
+</div>
+
 {% endblock content %}
