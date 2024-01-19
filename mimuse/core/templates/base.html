@@ -16,44 +16,59 @@
 
 <body class="container-fluid main">
 	<h1 class="title"><center>MiMuse  </center></h1>
-        <div class="row nav">
-        
+      
+        <div class="row g-0 nav">
             <li class="col-sm-4">
                 <a href="http://localhost:8000">Home</a>
             </li>
             <li class="col-sm-4">
                 <a href="http://localhost:8000/artists/">Artists</a>
             </li>
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Dropdown button
-                </button>
-                <!-- <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div> -->
-              </div>
-            <li class="col-sm-4 songnav">
-                <div class="dropdown-content pull-right">
+            <li class="col-sm-4 songnav dropdown">
+                <div class=" pull-right songnav dropbtn">
                 <a href="http://localhost:8000/songs/" class="dropdown pull-right">Songs</a>
-                <div class="row">
-                    <div class="dropdown-menu">
-                        
-                            <!-- <div class="dropdown-toggle"> -->
-                            <p class="dropdown-item strong songnav"><a href="{% url 'songs:song_list'%}">Songs</a></p>
-                            <p class="dropdown-item strong songnav"><a href="{% url 'songs:album_list'%}">Albums</a></p>
-                            <p class="dropdown-item strong songnav"><a href="{% url 'songs:favorites_list' %}">Favorite Songs</a></p>
-                            <!-- </div> -->
-                        </div></div>
+                <div class="dropdown">
+                            <div class="dropdown-content">
+                            <!-- <p class="dropdown-item strong songnav"><a href="{% url 'songs:song_list'%}">Songs</a></p> -->
+                            <a href="{% url 'songs:album_list'%}">Albums</a>
+                            <a href="{% url 'songs:favorites_list' %}">Favorite Songs</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </div>    
             </li>
         </div>
+
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Mimuse</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="http://localhost:8000">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://localhost:8000/artists/">Artists</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Songs
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="{% url 'songs:song_list'%}">Songs</a>
+                <a class="dropdown-item" href="{% url 'songs:album_list'%}">Albums</a>
+                <a class="dropdown-item" href="{% url 'songs:favorites_list'%}">Favorites</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+    </nav> -->
+
     <div class="run_api">
     </div>
     
-   
    
 	{% block content %}
     {% endblock content %}
