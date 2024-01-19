@@ -7,6 +7,7 @@
 </head>
 
 <body>
+    <h1>Songs</h1>
     <!-- <div class="row songnav">
         <div class="wrapper pull-right">
             <div class="dropdown-content pull-right">
@@ -26,11 +27,14 @@
         </form>
     </div>
     
-    {% for song in object_list %}
+    <div class="search">
+        {% for song in object_list %}
         <a href="{% url 'songs:song_detail' song.id %}">
             {{ song.title }}
         </a><br/>
         {% endfor %}
+    </div>
+        
     
         <div class="pagination">
             <span class="step-links">
