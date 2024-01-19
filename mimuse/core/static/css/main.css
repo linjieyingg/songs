@@ -1,3 +1,7 @@
+* {
+    font-family: "Manjari", sans-serif;
+}
+
 #hovering{
   display: inline;
   cursor: none;
