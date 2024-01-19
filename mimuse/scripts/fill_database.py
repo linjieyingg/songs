@@ -25,9 +25,9 @@ def remove_tags(message):
 
 def run():
    
-    api_key = 'aca7b771e2msh9c54abb3273edbdp178a4ajsnc1d498e77546'
+    api_key = '153c501680msh3dfee41a79a9befp16cbecjsn34ee5a30aea5'
     api_key2 = 'decc1ccd1emshec26a27a5b4d655p1dd505jsn708530cee011'
-    seed_track = '38MKW2tQHtyO8djIOKlEFF'
+    seed_track = '2IMPPA9UZpqTnnVIy9lDHU'
     
     conn = http.client.HTTPSConnection("spotify23.p.rapidapi.com")
     headers = {
