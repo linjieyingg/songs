@@ -1,3 +1,7 @@
+* {
+    font-family: "Manjari", sans-serif;
+}
+
 #hovering{
   display: inline;
   cursor: none;
@@ -67,23 +71,11 @@ li a:hover {
   background-color: red;
 } */
 
-.flex-container {
-  display: flex-box;
-  height: 200px;
-  align-items: center;
-  padding: 12px 14px;
-  border: 10px;
-  border-color: white;
-  /* background-color: rgb(212, 248, 212);
-  justify-content: space-around; */
 
-}
 
-.test{
-  display: inline-block;
-}
-
-/* .flex-container div {
+.dropdown-content {
+  display: none;
+  position: absolute;
   background-color: #f1f1f1;
   width: 100px;
   margin: 10px;
@@ -94,4 +86,37 @@ li a:hover {
 
 .bi-heart-fill {
   color:red;
+}
+
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block; 
+  z-index: 1;
+  padding: 14px 16px;
+}
+
+.dropdown .dropdown-content:hover {
+  display: block;
+  padding: 14px 16px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 14px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+a { 
+  color: inherit; 
+  text-decoration: inherit;
+} 
+
+a:hover {
+  opacity: 25%;
+  text-decoration: underline;
 }
