@@ -5,6 +5,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="/static/js/favorites.js"></script>
 <script src="/static/js/main.js"></script>
+
 <!-- <div class="row">
     <div class="col">
         <a href="{% url 'songs:song_list'%}"> Song List </a>
@@ -21,10 +22,10 @@
             {% csrf_token %}
             {% if object.favorite == False %}
             <button type="submit" onclick="changeFavorite()" class="favorite"><i class="bi bi-heart h1"></i></button>
-            <span class="fav">Favorite </span>
+            <p><small class="fav">Favorite </small></p>
             {% else%}
             <button type="submit" onclick="changeFavorite()" class="favorited"><i class="bi bi-heart-fill h1"></i></button>
-            <span class="unfav">Unfavorite</span>
+            <small class="unfav" style="vertical-align:bottom">Unfavorite</small>
             {%endif%}
         </form>
     </span></span> 

@@ -5,13 +5,18 @@
 #hovering{
   display: inline;
   cursor: none;
-  vertical-align: text-top;
+  vertical-align: super;
   }
 
 .fav {
-  position: absolute;
   font-style: italic;
-  font-size: 24px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  display: none;
+  bottom: 0;
+}
+.unfav {
+  font-style: italic;
   font-weight: bold;
   color: rgb(0, 0, 0);
   display: none;
@@ -66,13 +71,6 @@ li a:hover {
   
 }
 
-
-
-/* div{
-  display: block;
-  background-color: red;
-} */
-
 .title{
   margin-top: 16px;
 }
@@ -114,13 +112,14 @@ li a:hover {
   text-decoration: none;
   display: block;
 }
-
+/* 
 a { 
-  color: inherit; 
-  text-decoration: inherit;
+  color: black; 
+  text-decoration: none;
 } 
 
 a:hover {
-  opacity: 25%;
+  opacity: 50%;
   text-decoration: underline;
-}
+} */
+

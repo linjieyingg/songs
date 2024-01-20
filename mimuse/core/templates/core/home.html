@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<span class="display-6">Recommendations </span><br/>
+<div class="display-6 pt-3">Recommendations </div>
     {% for song in songs_list %}
         <div class="row">
             <a href="{% url 'songs:song_detail' song.id %}">
