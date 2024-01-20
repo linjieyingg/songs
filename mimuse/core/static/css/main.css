@@ -52,7 +52,7 @@ form {
 li a{
   display: block;
   color: white;
-  padding: 14px 16px;
+  padding: 5% 30%;
   text-decoration: none;
 }
 
@@ -66,12 +66,16 @@ li a:hover {
   
 }
 
+
+
 /* div{
   display: block;
   background-color: red;
 } */
 
-
+.title{
+  margin-top: 16px;
+}
 
 .dropdown-content {
   display: none;
@@ -96,17 +100,17 @@ li a:hover {
 .dropdown:hover .dropdown-content {
   display: block; 
   z-index: 1;
-  padding: 14px 16px;
+  /* padding: 5% 33%; */
 }
 
 .dropdown .dropdown-content:hover {
   display: block;
-  padding: 14px 16px;
+  /* padding: 5% 33%; */
 }
 
 .dropdown-content a {
   color: black;
-  padding: 14px 16px;
+  /* padding: 5% 33%; */
   text-decoration: none;
   display: block;
 }

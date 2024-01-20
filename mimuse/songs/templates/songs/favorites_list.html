@@ -7,7 +7,6 @@
         <div class="col strong"><a href="{% url 'songs:album_list'%}">Albums</a></div>
     </div> -->
     <div class="display-6">Favorites</div><br/>
-
     {% for song in object_list %}
         {% if song.favorite == True %}
             <a href="{% url 'songs:song_detail' song.id %}">
