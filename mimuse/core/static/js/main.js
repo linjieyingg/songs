@@ -6,3 +6,7 @@ function createTextCursor(event){
   
 document.getElementById("hovering").addEventListener('mouseover', createTextCursor);
 
+function play(){
+  let audio = document.getElementById('preview')
+  audio.play()
+}

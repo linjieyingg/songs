@@ -15,16 +15,15 @@
 </div> -->
 
 <div class="row">
-    <span class="display-1 strong">{{ object.title }}
+    <span class="display-1 strong pt-3">{{ object.title }}
         <span id="hovering" >
         <form action="{% url 'songs:update_favorites' object.id %}" method="POST">
             {% csrf_token %}
             {% if object.favorite == False %}
             <button type="submit" onclick="changeFavorite()" class="favorite"><i class="bi bi-heart h1"></i></button>
-            <span class="fav">Favorite </span>
+
             {% else%}
             <button type="submit" onclick="changeFavorite()" class="favorited"><i class="bi bi-heart h1"></i></button>
-            <span class="fav">Unfavorite </span>
             {%endif%}
         </form>
     </span></span> 
