@@ -60,3 +60,6 @@ ReyaM -- 2024-01-18 14:50
 
 JieyingL -- 2024-01-19 22:00
   Added play icons before song names in list views, audio popup on hover
+
+JieyingL -- 2024-01-21 12:06
+  Fill/unfill favorites heart when hovering 
