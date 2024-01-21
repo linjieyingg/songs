@@ -15,18 +15,23 @@
 </div> -->
 
 <div class="row">
-    <span class="display-1 strong pt-3">{{ object.title }}
-        <span id="hovering" >
+    <div class="display-1 strong pt-3">{{ object.title }}
+        <div id="hovering" style="vertical-align:middle;">
         <form action="{% url 'songs:update_favorites' object.id %}" method="POST">
             {% csrf_token %}
             {% if object.favorite == False %}
-            <button type="submit" onclick="changeFavorite()" class="favorite"><i class="bi bi-heart h1"></i></button>
-
+            <span class="unfaved">
+                <button type="submit"  class="favorite" style="vertical-align:super;"><i class="bi bi-heart h1"></i></button>
+                <button type="submit"  class="favorite2" style="vertical-align:super;color:red;"><i class="bi bi-heart-fill h1"></i></button>
+            </span>
             {% else%}
-            <button type="submit" onclick="changeFavorite()" class="favorited"><i class="bi bi-heart h1"></i></button>
+            <span class="faved">
+                <button type="submit"  class="favorited" style="vertical-align:super;color:red;"><i class="bi bi-heart-fill h1"></i></button>
+                <button type="submit"  class="favorited2" style="vertical-align:super;"><i class="bi bi-heart h1"></i></button>
+            </span>
             {%endif%}
         </form>
-    </span></span> 
+    </div></div> 
     
     <br/>
 </div>    

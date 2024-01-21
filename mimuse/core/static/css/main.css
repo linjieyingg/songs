@@ -5,17 +5,16 @@
 #hovering{
   display: inline;
   cursor: none;
-  vertical-align: super;
+  vertical-align:middle;
   }
 
-.favorite:hover {
-  color:#f90000;
+/* .unfaved:hover .favorite2 {
+  display:inline;
 }
   
 .favorited {
   position: relative;
-  color:#f90000;
-}
+} */
   
 button {
   all: unset;
@@ -94,12 +93,14 @@ li a:hover {
 }
 
 a {
+  vertical-align: baseline;
+  position:relative;
   color:black;
   text-decoration: none;
 }
 
 a:hover {
-  opacity: 50%;
+  opacity: 70%;
   text-decoration: underline;
 }
 /* 
@@ -125,4 +126,22 @@ audio{
 }
 .wrapper:hover a {
   vertical-align: super;
+  position:absolute;
+}
+
+.unfaved:hover .favorite,
+.unfaved .favorite2 {
+    display: none;
+}
+.unfaved:hover .favorite2 {
+    display: inline;
+    color:red;
+}
+
+.faved:hover .favorited,
+.faved .favorited2 {
+    display: none;
+}
+.faved:hover .favorited2 {
+    display: inline;
 }
