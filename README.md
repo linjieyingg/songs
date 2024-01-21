@@ -27,4 +27,6 @@ django-extensions
 - Inside the run function enter in your api keys in api_key and api_key2, and if you want you can replace seed_track with the track id of your favorite song -> can find the id in the search endpoint here https://rapidapi.com/Glavier/api/spotify23 
 - run:
   - python manage.py runscript fill_database
+  - python manage.py makemigrations
+  - python manage.py migrate
   - python manage.py runserver
