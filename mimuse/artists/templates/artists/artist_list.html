@@ -13,10 +13,10 @@
     </form>
 </div>
 
-<div class="flex-container ">
+<div >
     <div class="test">
         {% for artist in object_list %}
-        <a href="{% url 'artists:artist_detail' artist.id %}">
+        <a href="{% url 'artists:artist_detail' artist.id %}" class="artist">
         {{ artist.name }}
         </a><br/>
         {% endfor %}

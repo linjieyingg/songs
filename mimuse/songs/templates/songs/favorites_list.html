@@ -10,7 +10,7 @@
     
     {% for song in object_list %}
         {% if song.favorite == True %}
-            <a href="{% url 'songs:song_detail' song.id %}">
+            <a href="{% url 'songs:song_detail' song.id %}" style="font-size:large;">
                 {{ song.title }}
             </a><br/>
         {% endif %}

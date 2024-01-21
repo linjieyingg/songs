@@ -4,16 +4,16 @@
 {% block content %}
     <!-- <a href="{% url 'artists:artist_list' %}">Artists -->
     <!-- list</a><br/><br/> -->
-    <img style="width:20%" src={{ object.image }} 
+    <img style="width:20%;display:block;margin-left:auto;margin-right:auto;margin-top:3%;" src={{ object.image }} 
     alt="image"/> 
-    <h1>{{ object.name }}</h1> {{ object.followers }} Followers <br/>
+    <h1 style="text-align:center;margin-top:2%">{{ object.name }}</h1> {{ object.followers }} Followers <br/>
     <br/> {{ object.overview}}
         {% if exist %}
             <div> <h3 class="my-3">Albums</h3>
             {% for album in albums%}
                 <div class="row my-2">
-                <img class="col-2" style="" src={{album.cover_image}} alt="image"/>
-                <span class="col my-auto display-6"><a href="{% url 'songs:album_detail' album.id %}" >{{album.title}}</a></span>
+                <img class="col-2" src={{album.cover_image}} alt="image"/>
+                <span class="col my-auto display-6" ><a href="{% url 'songs:album_detail' album.id %}" >{{album.title}}</a></span>
                 </div>
         {% endfor%}
        {%endif%}

@@ -145,3 +145,17 @@ audio{
 .faved:hover .favorited2 {
     display: inline;
 }
+
+.artist{
+  display:block;
+  font-size: larger;
+  background-color:pink;
+}
+
+.artist:hover{
+  background-color: grey;
+}
+
+body{
+  background-color: #EDFFEC;
+}
