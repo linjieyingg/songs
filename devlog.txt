@@ -58,8 +58,14 @@ JieyingL -- 2024-01-17 21:46
 ReyaM -- 2024-01-18 14:50
   added page title and favicon
 
+XinyiR -- 2024-01-19 15:45
+  Fixed Nav Bar and added dropdown
+
 JieyingL -- 2024-01-19 22:00
   Added play icons before song names in list views, audio popup on hover
 
 JieyingL -- 2024-01-21 12:06
   Fill/unfill favorites heart when hovering 
+
+XinyiR -- 2024-01-21 19:37
+  edited css, changed color scheme and added color block to song
