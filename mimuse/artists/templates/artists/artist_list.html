@@ -4,24 +4,27 @@
 {% block content %}
 <h1  class="pt-3">Artists </h1>
 
-<div class="my-2">
-    <form action="{% url 'artists:search' %}" method = 'get'>
-        <div class="inner-addon left-addon">
-            <i class="bi bi-search"></i>
-            <input type="text" name="q" placeholder="Search Artist Name">
+<div class="artist-list">
+    <div class="my-2">
+        <form action="{% url 'artists:search' %}" method = 'get'>
+            <div class="inner-addon left-addon">
+                <i class="bi bi-search"></i>
+                <input type="text" name="q" placeholder="Search Artist Name">
+            </div>
+        </form>
+    </div>
+    
+    <div >
+        <div>
+            {% for artist in object_list %}
+            <a href="{% url 'artists:artist_detail' artist.id %}" class="list">
+            {{ artist.name }}
+            </a><br/>
+            {% endfor %}
         </div>
-    </form>
+       
+    </div>
 </div>
 
-<div >
-    <div class="test">
-        {% for artist in object_list %}
-        <a href="{% url 'artists:artist_detail' artist.id %}" class="artist">
-        {{ artist.name }}
-        </a><br/>
-        {% endfor %}
-    </div>
-   
-</div>
 
 {% endblock content %}

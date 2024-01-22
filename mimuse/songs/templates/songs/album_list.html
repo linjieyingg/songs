@@ -6,7 +6,7 @@
     <div class="col strong"><a href="{% url 'songs:album_list'%}">Albums</a></div>
     <div class="col strong"><a href="{% url 'songs:favorites_list'%}">Favorite Songs</a></div>
 </div> -->
-<h1 class="pt-3">Albums</h1>
+<h1>Albums</h1>
 <div class="my-2">
     <form action="{% url 'songs:album_search' %}" method = 'get'>
         <div class="inner-addon left-addon">
@@ -17,7 +17,7 @@
 </div>
 
     {% for album in object_list %}
-        <a href="{% url 'songs:album_detail' album.id %}" style="font-size:large;">
+        <a class="list" href="{% url 'songs:album_detail' album.id %}">
             {{ album.title }}
         </a><br/>
     {% endfor %}

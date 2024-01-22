@@ -5,6 +5,9 @@ function createTextCursor(event){
   }
   
 function play(){
-  let audio = document.getElementById('preview')
-  audio.play()
+  let audio = document.getElementById('preview');
+  audio.play();
+  let t = document.getElementsById('tes');
+  t.style.color = "blue";
+
 }
