@@ -36,7 +36,7 @@
                         <i class="bi bi-play-btn inline-block  p-2 pt-0" > </i>
                     </button></div>
                 </div>
-                <a class="my-auto inline-block" style="vertical-align:-webkit-baseline-middle;" href="{% url 'songs:song_detail' song.id %}" > {{song.title}} </a>
+                <a class="my-auto inline-block song" style="vertical-align:-webkit-baseline-middle;" href="{% url 'songs:song_detail' song.id %}" > {{song.title}} </a>
     
             </div>
             {% endfor%}
