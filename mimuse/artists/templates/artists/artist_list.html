@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-<span class="display-6">Artists </span><br/>
+<h1  class="pt-3">Artists </h1>
 
 <div class="my-2">
     <form action="{% url 'artists:search' %}" method = 'get'>
@@ -13,7 +13,7 @@
     </form>
 </div>
 
-<div class="flex-container">
+<div class="flex-container ">
     <div class="test">
         {% for artist in object_list %}
         <a href="{% url 'artists:artist_detail' artist.id %}">

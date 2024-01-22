@@ -2,10 +2,11 @@
 {% load static %}
 
 {% block content %}
-    <div class="row my-2">
+    <!-- <div class="row my-2">
         <div class="col strong"><a href="{% url 'songs:song_list'%}">All Songs</a></div>
         <div class="col strong"><a href="{% url 'songs:album_list'%}">Albums</a></div>
-    </div>
+    </div> -->
+    <h1  class="pt-3">Favorites</h1>
     
     {% for song in object_list %}
         {% if song.favorite == True %}

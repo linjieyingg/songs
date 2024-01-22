@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<a href="{% url 'songs:album_list' %}" > Album List </a> <br/><br/>
+<a href="{% url 'songs:album_list' %}" > <i class="bi bi-arrow-left h1"></i> Back to Album List </a> <br/>
 <div class="row pb-2">
     <img class="col-4"  src={{ object.cover_image }} 
     alt="image"/> 
@@ -12,16 +12,25 @@
         <div class="row">by<a href="{% url 'artists:artist_detail' artists.id %}">{{artists.name}}</a></div>
     </div>
 </div>
-{% comment %} <div class=''> {% endcomment %}
-    {% for song in songs %}
-        <div class="row py-2">
-            <audio class="col" controls>
-                <source src={{song.preview_url}} type="audio/mp3">
-            </audio>
-            <a class="col my-auto display-6" href="{% url 'songs:song_detail' song.id %}" > {{song.title}} 
+   {% for song in songs %}
+        <div class=" py-2">
+            <div class="wrapper">
+                <div class="box2"><audio class="col" id="preview" controls>
+                    <source src={{song.preview_url}} type="audio/mp3">
+                </audio></div>
+                <div class="box1">
+                <button type="submit" onclick="play()" class="favorite">
+                    <i class="bi bi-play-btn inline-block display-6 p-2 pt-0" > </i>
+                </button></div>
+            </div>
+            <a class="my-auto display-6 inline-block" style="vertical-align:-webkit-baseline-middle;" href="{% url 'songs:song_detail' song.id %}" > {{song.title}} </a>
+
         </div>
     {%endfor%}
-{% comment %} </div> {% endcomment %}
 
 
 {% endblock content %}
+
+{% block js%}
+
+{% endblock js%}
