@@ -2,3 +2,4 @@ nodeenv
 pgadmin4
 jupyter
 django-extensions
+bs4
